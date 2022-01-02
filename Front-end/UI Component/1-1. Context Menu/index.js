@@ -1,3 +1,6 @@
+// Import stylesheets
+import './style.css';
+
 // Write Javascript code here!
 
 // 마우스 클릭했을시에 context 내용이 뜨게 된다.
@@ -34,8 +37,8 @@ items.forEach(item => {
 // 이벤트 리스너를 최소화 할 수 있는 방법
 // 먼저 wrappr를 잡아준다.
 
-const wrapper = document.querySelector(".wrapper");
-const items = document.querySelectorAll(".item");
+const wrapper = document.querySelector('.wrapper');
+const items = document.querySelectorAll('.item');
 
 /* 이벤트 리스너의 등록은 가급적 최소화하는것이 바람직하다.
 그러려면, 아래와 같이 이벤트의 버블링, 캡쳐링에 대해서 정확하게 이해해야 한다.
@@ -91,19 +94,19 @@ document.body.addEventListener('click', e => {
 버블링을 생각해보면 wrapper보다 body가 위에 있으니까
 body에서 조건을 줘서 안에 wrapper를 주면 된다. */
 
-document.body.addEventListener("click", (e) => {
+document.body.addEventListener('click', e => {
   const targetClassList = e.target.classList;
-  if (targetClassList.contains("context")) return;
-  if (targetClassList.contains("item")) {
-    targetClassList.toggle("open");
-    items.forEach((elem) => {
-      if (elem !== e.target) elem.classList.remove("open");
+  if (targetClassList.contains('context')) return;
+  if (targetClassList.contains('item')) {
+    targetClassList.toggle('open');
+    items.forEach(elem => {
+      if (elem !== e.target) elem.classList.remove('open');
     });
     // 여기서는 동작을 하면 안되니까 return 처리를 해준다.
     return;
   }
-  items.forEach((elem) => {
-    elem.classList.remove("open");
+  items.forEach(elem => {
+    elem.classList.remove('open');
   });
 });
 
