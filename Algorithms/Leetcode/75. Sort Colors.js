@@ -9,6 +9,7 @@
   + nums[current]가 1일때만 current++를 해준다.
   그리고나서 최종적으로 nums를 return 해준다.
 */
+
 const sortColors = function (nums) {
   let left = 0;
   let right = nums.length - 1;
