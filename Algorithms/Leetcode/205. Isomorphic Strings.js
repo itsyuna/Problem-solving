@@ -1,7 +1,6 @@
 /* 
 -> 구현 생각
 우선 s와 t의 길이가 같지 않다면 바로 return false를 해주고,
-
 Map()을 만들어서 for문을 순회하면서
 map.has(s[i])와 map.get(s[i])가 t[i]와 같지 않다면,
 false를 return해주고,
