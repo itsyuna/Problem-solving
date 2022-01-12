@@ -1,9 +1,11 @@
+// Combination 사용
+
 const numIdenticalPairs = function (nums) {
-  const res = [];
+  const answer = [];
 
   const helper = function (cur, index) {
     if (cur.length === 2) {
-      res.push([...cur]);
+      answer.push([...cur]);
       return;
     }
     for (let i = index; i < nums.length; i++) {
@@ -15,7 +17,7 @@ const numIdenticalPairs = function (nums) {
   helper([], 0);
 
   let count = 0;
-  res.forEach(elem => (elem[0] === elem[1] ? count++ : count));
+  answer.forEach(elem => (elem[0] === elem[1] ? count++ : count));
   return count;
 };
 
