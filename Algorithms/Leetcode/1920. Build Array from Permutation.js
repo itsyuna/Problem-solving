@@ -7,7 +7,7 @@ const buildArray = function (nums) {
   return answer;
 };
 
-// 더 빠른 버젼 72ms
+// 72ms
 /*
 var buildArray = function (nums) {
   return nums.map(a => nums[a]);
