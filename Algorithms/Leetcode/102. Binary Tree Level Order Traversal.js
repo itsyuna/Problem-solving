@@ -41,6 +41,7 @@ var levelOrder = function (root) {
   function traverse(node, level) {
     if (!node) return;
     if (arr.length <= level) arr.push([]);
+    
     arr[level].push(node.val);
 
     traverse(node.left, level + 1);
