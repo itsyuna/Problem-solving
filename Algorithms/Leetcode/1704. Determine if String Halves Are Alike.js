@@ -8,6 +8,7 @@ const halvesAreAlike = function (s) {
       if (vowels.includes(s[i])) count++;
     } else if (vowels.includes(s[i])) count--;
   }
+  
   return count === 0;
 };
 
