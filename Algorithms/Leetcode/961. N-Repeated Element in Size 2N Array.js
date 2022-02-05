@@ -9,6 +9,10 @@ const repeatedNTimes = function (nums) {
     }
     map.set(num, map.get(num) + 1);
   });
+  
+  for (const [key, value] of map.entries()) {
+    if (value === repeatedNums) return key;
+  }
 };
 
 console.log(repeatedNTimes([1, 2, 3, 3])); // 3
