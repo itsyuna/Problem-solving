@@ -5,14 +5,14 @@ function solution(n, times) {
 
   while (min <= max) {
     const mid = Math.floor((min + max) / 2);
-    let sumTimes = 0;
+    let count = 0;
 
     for (const time of times) {
-      sumTimes += Math.floor(mid / time);
+      count += Math.floor(mid / time);
     }
 
     // 현재 가능한 인원수 >= 목표 인원수
-    if (sumTimes >= n) {
+    if (count >= n) {
       // 시간을 더 줄여주기
       max = mid - 1;
       answer = mid;
