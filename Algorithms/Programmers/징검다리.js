@@ -11,6 +11,7 @@ function solution(distance, rocks, n) {
     const mid = Math.floor((start + end) / 2);
 
     for (const rock of sortRocks) {
+      // 현재 rock과 이전 rock의 거리 차이
       const curDistance = rock - previous;
 
       // 현재 거리 <= mid
