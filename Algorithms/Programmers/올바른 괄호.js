@@ -15,6 +15,7 @@ function solution(s) {
   for (const v of map.values()) {
     answer.push(v);
   }
+  console.log(answer);
 
   const set = new Set(answer);
 

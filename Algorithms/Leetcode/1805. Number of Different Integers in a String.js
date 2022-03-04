@@ -4,8 +4,10 @@ const numDifferentIntegers = function (word) {
 
   // 숫자가 아닌 부분은 공백 처리
   const onlyNumWord = word.replace(regExp, ' ');
+  // console.log(onlyNumWord);
 
   const newArr = onlyNumWord.split(' ');
+  console.log(newArr);
 
   for (let i = 0; i < newArr.length; i++) {
     // 빈 문자열이 아닌 부분 = 숫자 요소값들

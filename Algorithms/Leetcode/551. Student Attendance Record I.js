@@ -11,6 +11,8 @@ const checkRecord = function (s) {
     if (s[i] === 'L' && s[i] === s[i + 1]) {
       countL++;
       if (countL === 3) return false;
+    } else {
+      countL = 1;
     }
   }
 
