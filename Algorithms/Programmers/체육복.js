@@ -13,6 +13,7 @@ function solution(n, lost, reserve) {
   // Ex) solution(5, [4, 2], [3, 5])); // return -> 5
   let newLost = losted.sort((a, b) => a - b);
 
+  // 빌려줄 수 있는 학생 수 체크 
   for (let eachLost of newLost) {
     if (reserved.includes(eachLost - 1)) {
       let idx = reserved.indexOf(eachLost - 1);
