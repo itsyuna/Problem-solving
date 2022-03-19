@@ -10,7 +10,7 @@ function solution(n, m) {
     
     // 최대공약수 구하기
     for (let i = 1; i <= num; i++) {
-        if (n % 1 === 0 && m % 1 === 0) {
+        if (n % i === 0 && m % i === 0) {
             gcd = i;
         }
     }
@@ -19,7 +19,7 @@ function solution(n, m) {
     lcm = n * m / gcd;
     answer = [gcd, lcm];
     
-    return answer;
+    return answer;   
 }
 
 console.log(solution(3, 12)); // [3, 12]
