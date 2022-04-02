@@ -67,6 +67,24 @@ function solution(genres, plays) {
   return result;
 }
 
+// * 노래 수록 기준 중 3번 기준인 '장르 내에서 재생 횟수가 같은 노래 중에서는 고유 번호가 낮은 노래를 먼저 수록합니다.'는,
+// 아래와 같이 map의 특성을 이용하여 key값이 숫자로 시작하면, 자동으로 오름차순 정렬해준다. 
+/*
+  [
+    [ '1', 'pop', '2500' ],
+    [ '4', 'pop', '2500' ],
+    [ '6', 'pop', '2500' ],
+    [ '9', 'pop', '2500' ],
+    [ '10', 'pop', '2500' ],
+    [ '3', 'classic', '800' ],
+    [ '8', 'classic', '800' ],
+    [ '0', 'classic', '500' ],
+    [ '5', 'classic', '500' ],
+    [ '2', 'classic', '150' ],
+    [ '7', 'classic', '150' ]
+  ]
+*/
+
 console.log(
   solution(
     ["classic", "pop", "classic", "classic", "pop"],
