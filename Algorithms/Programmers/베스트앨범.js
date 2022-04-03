@@ -55,6 +55,7 @@ function solution(genres, plays) {
     let count = 0;
     for (let j = 0; j < indexGenre.length; j++) {
       if (favoritesP[i] === indexGenre[j][1]) {
+        // 현재 인덱스(넘버링)가 문자열 숫자로 되어있기 때문에, 숫자로 바꿔주기
         result.push(+indexGenre[j][0]);
         count++;
       }
