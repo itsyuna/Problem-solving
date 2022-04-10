@@ -2,22 +2,22 @@ function solution(lottos, win_nums) {
   let answer = [];
 
   // 일치하는 번호
-  let sameNum = win_nums.filter((elem) => lottos.includes(elem)).length;
+  const sameNum = win_nums.filter(elem => lottos.includes(elem)).length;
 
   // 알아볼 수 없는 번호 찾기 => 0 개수
-  let findZero = lottos.filter((elem) => 0 === elem).length;
+  const findZero = lottos.filter(elem => elem === 0).length;
 
   // 최고 순위 (일치하는 개수 + 0 개수(맞을 수 있는 확률))
-  let theBest = sameNum + findZero;
+  const theBest = sameNum + findZero;
 
   // 최저 순위 = 일치하는 번호만 (sameNum)
 
-  let maxRanking = theBest > 1 ? 7 - theBest : 6;
-  let minRanking = sameNum > 1 ? 7 - sameNum : 6;
+  const maxRanking = theBest > 1 ? 7 - theBest : 6;
+  const minRanking = sameNum > 1 ? 7 - sameNum : 6;
 
   answer = [maxRanking, minRanking];
-  
-  return answer; 
+
+  return answer;
 }
 
 console.log(solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19])); // [3, 5]
