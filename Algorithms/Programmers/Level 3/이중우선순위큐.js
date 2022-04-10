@@ -1,20 +1,20 @@
 function solution(operations) {
   let priorityQueue = [];
 
-  for (let operation of operations) {
-    let separateO = operation.split(" ");
+  for (const operation of operations) {
+    const separateO = operation.split(' ');
 
     // 숫자 삽입
-    if (separateO.includes("I")) {
+    if (separateO.includes('I')) {
       priorityQueue.push(+separateO[1]);
     }
 
     priorityQueue.sort((a, b) => b - a);
 
     // 숫자 제거
-    if (operation === "D 1") {
+    if (operation === 'D 1') {
       priorityQueue.shift();
-    } else if (operation === "D -1") {
+    } else if (operation === 'D -1') {
       priorityQueue.pop();
     }
   }
@@ -26,5 +26,5 @@ function solution(operations) {
   return priorityQueue.length ? priorityQueue : [0, 0];
 }
 
-console.log(solution(["I 16", "D 1"])); // [0, 0]
-console.log(solution(["I 7", "I 5", "I -5", "D -1"])); // [7, 5]
+console.log(solution(['I 16', 'D 1'])); // [0, 0]
+console.log(solution(['I 7', 'I 5', 'I -5', 'D -1'])); // [7, 5]

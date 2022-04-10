@@ -1,10 +1,10 @@
 function solution(board, moves) {
-  let stack = [];
+  const stack = [];
   let result = 0;
 
   for (let i = 0; i < moves.length; i++) {
     // 배열 인덱스 0부터 시작
-    let idx = moves[i] - 1;
+    const idx = moves[i] - 1;
     for (let j = 0; j < board.length; j++) {
       if (board[j][idx] !== 0) {
         // 바구니에 같은 인형이 있을 경우

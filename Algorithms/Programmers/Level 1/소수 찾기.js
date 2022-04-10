@@ -35,7 +35,6 @@ function solution(numbers) {
   };
 
   makeNumbers(separateN, '');
-
   return answer.length;
 }
 

@@ -6,12 +6,12 @@ function solution(sizes) {
   let min = 0;
 
   // 중복 제거 및 오름차순 정렬
-  let set = new Set(flatSizes.sort((a, b) => a - b));
-  let ascendingOrder = [...set];
+  const set = new Set(flatSizes.sort((a, b) => a - b));
+  const ascendingOrder = [...set];
 
   // 최소값부터 순회하면서 기존 명함 배열의 min값과 비교하기
   for (let i = 0; i < ascendingOrder.length; i++) {
-    for (let namecard of sizes) {
+    for (const namecard of sizes) {
       min = Math.min(...namecard);
 
       // 전체 길이 중 최소값이 기존 명함의 각 배열의 min값보다 작다면, 사이즈 초과로 제작 불가

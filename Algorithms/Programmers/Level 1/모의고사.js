@@ -22,6 +22,7 @@ function solution(answers) {
       countNo3++;
     }
   }
+
   const maxNum = Math.max(countNo1, countNo2, countNo3);
 
   if (maxNum === countNo1) answer.push(1);

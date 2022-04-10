@@ -1,7 +1,7 @@
 function solution(scoville, k) {
   // 섞은 음식의 스코빌 지수
   // = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)
-  let ascendingS = scoville.sort((a, b) => a - b);
+  const ascendingS = scoville.sort((a, b) => a - b);
   let mix = 0;
   let count = 0;
 
@@ -22,7 +22,7 @@ function solution(scoville, k) {
   // let unavailable = ascendingS.find((elem) => elem < k);
   // return unavailable !== undefined ? -1 : count;
 
-  let unavailable = ascendingS.filter((elem) => elem < k);
+  const unavailable = ascendingS.filter(elem => elem < k);
   return unavailable.length > 0 ? -1 : count;
 }
 

@@ -1,21 +1,20 @@
 function solution(jobs) {
   // 요청 시간순으로 오름차순 정렬 => 요청시간이 같은 경우 소요시간 기준 오름차순 정렬
-  let ascendingJobs = jobs.sort((a, b) => {
+  const ascendingJobs = jobs.sort((a, b) => {
     if (a[0] === b[0]) {
       return a[1] - b[1];
-    } else {
-      return a[0] - b[0];
     }
+    return a[0] - b[0];
   });
   // [ [ 0, 3 ], [ 1, 9 ], [ 2, 6 ] ]
 
   let start = ascendingJobs[0][0]; // 시작하는 시간
-  let priorityQueue = [];
-  let listRuntime = [];
+  const priorityQueue = [];
+  const listRuntime = [];
   let runtime = 0; // 요청부터 종료까지 걸리는 시간
 
   while (ascendingJobs.length > 0) {
-    let job = ascendingJobs[0]; // 순차적 작업순
+    const job = ascendingJobs[0]; // 순차적 작업순
 
     // 현재 작업 시작 시간 > 요청 시간 => 우선순위 Queue에 넣어줌
     if (start > job[0]) {
@@ -26,9 +25,9 @@ function solution(jobs) {
       // 우선순위 Queue에 해야 할 작업이 있다면 -> 작업 소요 시간 기준 오름차순 정렬
       if (priorityQueue.length > 0) {
         priorityQueue.sort((a, b) => a[1] - b[1]);
-        let waitQueue = priorityQueue.shift();
+        const waitQueue = priorityQueue.shift();
 
-        //시작시간 = 시작시간 + 작업 소요시간
+        // 시작시간 = 시작시간 + 작업 소요시간
         start += waitQueue[1];
         // 작업 소요 시간 = (시작시간 + 작업 소요 시간) - 요청 시점
         runtime = start - waitQueue[0];
@@ -46,7 +45,7 @@ function solution(jobs) {
     if (ascendingJobs.length === 0 && priorityQueue.length > 0) {
       priorityQueue.sort((a, b) => a[1] - b[1]);
       while (priorityQueue.length > 0) {
-        let waitQueue = priorityQueue.shift();
+        const waitQueue = priorityQueue.shift();
         start += waitQueue[1];
         runtime = start - waitQueue[0];
         listRuntime.push(runtime);
@@ -54,7 +53,7 @@ function solution(jobs) {
     }
   }
 
-  let answer = listRuntime.reduce((prev, cur) => prev + cur, 0);
+  const answer = listRuntime.reduce((prev, cur) => prev + cur, 0);
   return Math.floor(answer / listRuntime.length);
 }
 

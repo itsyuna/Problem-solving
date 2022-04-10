@@ -1,13 +1,12 @@
 function solution(nums) {
-  let set = new Set(nums);
-  let newArr = [...set];
-  let pick = nums.length / 2;
+  const set = new Set(nums);
+  const newArr = [...set];
+  const pick = nums.length / 2;
 
   if (newArr.length < pick) {
     return newArr.length;
-  } else {
-    return pick;
   }
+  return pick;
 }
 
 console.log(solution([3, 1, 2, 3])); // 2
