@@ -16,6 +16,7 @@ function solution(lottos, win_nums) {
   let minRanking = sameNum > 1 ? 7 - sameNum : 6;
 
   answer = [maxRanking, minRanking];
+  
   return answer;
 }
 
