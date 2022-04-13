@@ -4,6 +4,7 @@ function solution(skill, skill_trees) {
 
   const map = new Map();
 
+  // 선행 순서 저장 (index)
   for (let i = 0; i < skill.length; i++) {
     map.set(skill[i], i);
   }
