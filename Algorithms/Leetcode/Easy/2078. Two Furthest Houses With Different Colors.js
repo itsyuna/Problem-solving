@@ -1,7 +1,7 @@
 const maxDistance = function (colors) {
-  if (colors.length === 2) return 1;
   let start = 0;
   const end = colors.length - 1;
+  if (colors.length === 2) return 1;
   if (colors[start] !== colors[end]) return end;
 
   let maxDistance = 0;
