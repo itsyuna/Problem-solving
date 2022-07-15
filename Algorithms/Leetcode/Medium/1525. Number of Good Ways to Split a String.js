@@ -1,4 +1,30 @@
+// Success
+const numSplits = function (s) {
+  let count = 0;
+  const setLeft = new Set();
+  const setRight = new Set();
+  const countLeftLetters = [];
+  const countRightLetters = [];
+
+  for (let i = 0; i < s.length - 1; i++) {
+    setLeft.add(s[i]);
+    countLeftLetters.push(setLeft.size);
+
+    setRight.add(s[s.length - 1 - i]);
+    countRightLetters.push(setRight.size);
+  }
+
+  for (const num of countLeftLetters) {
+    if (num === countRightLetters[countRightLetters.length - 1]) count++;
+
+    countRightLetters.pop();
+  }
+
+  return count;
+};
+
 // Time Limit Exceeded
+/*
 const numSplits = function (s) {
   let count = 0;
 
@@ -19,6 +45,7 @@ const numSplits = function (s) {
 
   return count;
 };
+*/
 
 console.log(numSplits('aacaba')); // 2
 console.log(numSplits('abcd')); // 1
