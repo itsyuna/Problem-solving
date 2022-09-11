@@ -5,9 +5,9 @@ const percentageLetter = function (s, letter) {
     if (char === letter) countLetter++;
   }
 
-  const answer = Math.trunc((countLetter / s.length) * 100);
+  if (countLetter === 0) return 0;
 
-  return countLetter !== 0 ? answer : 0;
+  return Math.trunc((countLetter / s.length) * 100);
 };
 
 console.log(percentageLetter('foobar', 'o'));
