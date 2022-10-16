@@ -1,5 +1,6 @@
 const pivotArray = function (nums, pivot) {
   const pivotIdx = nums.indexOf(pivot);
+
   const left = [];
   const right = [];
 
