@@ -1,9 +1,9 @@
 const maxArea = function (height) {
   if (height.length === 2) return Math.min(...height);
 
+  let max = 0;
   let left = 0;
   let right = height.length - 1;
-  let max = 0;
 
   while (left < right) {
     const currentArea = (right - left) * Math.min(height[left], height[right]);
