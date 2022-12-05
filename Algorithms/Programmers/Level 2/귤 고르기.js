@@ -2,7 +2,6 @@ function solution(k, tangerine) {
   const set = new Set(tangerine);
   if (set.size === 1) return 1;
 
-  const answer = [];
   const map = new Map();
 
   for (const sizeOfTangerine of tangerine) {
@@ -11,6 +10,7 @@ function solution(k, tangerine) {
 
   const sortTangerine = [...map].sort((a, b) => b[1] - a[1]);
 
+  const answer = [];
   let count = k;
   for (const tangerine of sortTangerine) {
     if (count <= 0) return answer.length;
